@@ -1,0 +1,1199 @@
+@charset "UTF-8";
+
+/* =========================
+   Reset
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background:
+        radial-gradient(
+            circle at 20% 10%,
+            rgba(255, 221, 238, 0.45),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(190, 240, 255, 0.5),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f5fbff,
+            #fbf5ff
+        );
+
+    color: #26384a;
+
+    font-family:
+        "Noto Sans JP",
+        sans-serif;
+
+    font-weight: 300;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   Common
+========================= */
+
+.container {
+    width: min(1180px, 90%);
+    margin: 0 auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+
+/* =========================
+   Loading
+========================= */
+
+.loading {
+    position: fixed;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #eefaff,
+            #faf1ff
+        );
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    animation: loadingHide 1s ease 1.8s forwards;
+}
+
+.loading-logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 38px;
+    letter-spacing: .08em;
+    color: #6f83a0;
+}
+
+.loading-line {
+    width: 120px;
+    height: 1px;
+    margin-top: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #d6ad70,
+            transparent
+        );
+
+    animation: loadingLine 1.4s ease infinite;
+}
+
+@keyframes loadingLine {
+
+    0% {
+        transform: scaleX(.2);
+        opacity: .2;
+    }
+
+    50% {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scaleX(.2);
+        opacity: .2;
+    }
+}
+
+@keyframes loadingHide {
+
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+}
+
+
+/* =========================
+   Particles
+========================= */
+
+.particles {
+    position: fixed;
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .9);
+
+    box-shadow:
+        0 0 10px rgba(155, 220, 255, .7),
+        0 0 20px rgba(220, 180, 255, .35);
+
+    animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+
+    from {
+        transform:
+            translateY(100vh)
+            scale(.5);
+
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .7;
+    }
+
+    to {
+        transform:
+            translateY(-20vh)
+            scale(1.2);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.site-header {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    padding: 30px 5%;
+}
+
+.header-inner {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 1400px;
+
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-main {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 30px;
+
+    letter-spacing: .08em;
+
+    color: white;
+
+    text-shadow:
+        0 2px 15px rgba(0, 0, 0, .15);
+}
+
+.logo-sub {
+    font-size: 9px;
+
+    letter-spacing: .25em;
+
+    color: white;
+
+    opacity: .85;
+}
+
+.global-nav {
+    display: flex;
+
+    gap: 28px;
+}
+
+.global-nav a {
+    position: relative;
+
+    color: white;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: .12em;
+
+    transition: .4s ease;
+}
+
+.global-nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 1px;
+
+    background: #e3bd7c;
+
+    transition: .4s ease;
+}
+
+.global-nav a:hover::after,
+.global-nav a.current::after {
+    width: 100%;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.farm-hero {
+    position: relative;
+
+    height: 92vh;
+    min-height: 650px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Hero Image */
+
+.farm-hero-image {
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../img/farm-hero01.webp");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    transform: scale(1.02);
+
+    /* 3枚すべて共通で使う透明度 */
+    opacity: 0.72;
+
+    filter: saturate(0.85);
+
+    transition:
+        opacity 2.5s ease-in-out,
+        transform 6s ease;
+}
+
+
+/* Hero Image Zoom */
+
+@keyframes farmHeroZoom {
+
+    from {
+        transform: scale(1.02);
+    }
+
+    to {
+        transform: scale(1.10);
+    }
+
+}
+
+
+/* Hero Overlay */
+
+.farm-hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(55, 75, 90, .38),
+            rgba(55, 75, 90, .12) 45%,
+            rgba(55, 75, 90, .42)
+        );
+
+    z-index: 1;
+}
+
+
+/* Hero Content */
+
+.farm-hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    text-align: center;
+
+    color: white;
+
+    animation:
+        heroContent
+        1.4s
+        ease
+        .3s
+        both;
+}
+
+
+/* Hero Text - Gold + Shadow */
+
+.farm-hero-content .hero-label,
+.farm-hero-content h1,
+.farm-hero-content .hero-copy {
+
+    color: #ffffff;
+
+    /*
+     * ごく薄いシャンパンゴールドの縁
+     * 強くしすぎず、白文字を保つ
+     */
+    -webkit-text-stroke:
+        0.45px
+        rgba(225, 194, 135, .72);
+
+    /*
+     * 黒い影＋ゴールドの柔らかい光
+     */
+    text-shadow:
+        0 2px 5px rgba(0, 0, 0, .45),
+        0 0 10px rgba(205, 170, 105, .28);
+}
+
+
+/* Hero Animation */
+
+@keyframes heroContent {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Hero Label */
+
+.hero-label {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 17px;
+
+    letter-spacing: .35em;
+
+    margin-bottom: 15px;
+}
+
+
+/* Hero Title */
+
+.farm-hero h1 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(70px, 12vw, 150px);
+
+    font-weight: 400;
+
+    letter-spacing: .12em;
+
+    line-height: .9;
+}
+
+
+/* Hero Line */
+
+.hero-line {
+    display: block;
+
+    width: 90px;
+    height: 1px;
+
+    margin: 30px auto;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #e7c27d,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px rgba(231, 194, 125, .35);
+}
+
+
+/* Hero Copy */
+
+.hero-copy {
+    font-size: 15px;
+
+    line-height: 2;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================
+   Intro
+========================= */
+
+.farm-intro {
+    position: relative;
+
+    padding:
+        150px
+        0
+        120px;
+
+    text-align: center;
+}
+
+.section-label {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    color: #b58c52;
+
+    font-size: 14px;
+
+    letter-spacing: .3em;
+
+    margin-bottom: 20px;
+}
+
+.farm-intro h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(38px, 5vw, 64px);
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+    color: #5e738c;
+
+    margin-bottom: 35px;
+}
+
+.intro-text {
+    max-width: 650px;
+
+    margin: 0 auto 15px;
+
+    line-height: 2.2;
+
+    color: #6f7f8f;
+}
+
+
+/* =========================
+   Fruit Section
+========================= */
+
+.fruit-section {
+    position: relative;
+
+    padding:
+        60px
+        0
+        150px;
+}
+
+.fruit-heading {
+    text-align: center;
+
+    margin-bottom: 80px;
+}
+
+.fruit-heading h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(45px, 6vw, 75px);
+
+    font-weight: 400;
+
+    letter-spacing: .05em;
+
+    color: #607a94;
+
+    margin-bottom: 20px;
+}
+
+.fruit-heading > p:last-child {
+    color: #82909d;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================
+   Fruit Grid
+========================= */
+
+.fruit-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 70px 45px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   Fruit Card
+========================= */
+
+.fruit-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background:
+        rgba(255, 255, 255, .58);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, .85);
+
+    box-shadow:
+        0 25px 60px
+        rgba(108, 145, 170, .13);
+
+    backdrop-filter: blur(14px);
+
+    transition:
+        transform .8s cubic-bezier(.2,.7,.2,1),
+        box-shadow .8s ease;
+}
+
+.fruit-card:hover {
+    transform:
+        translateY(-12px);
+
+    box-shadow:
+        0 35px 80px
+        rgba(108, 145, 170, .22);
+}
+
+
+/* 中央カード */
+
+.fruit-card-center {
+    grid-column: 1 / -1;
+
+    width: 68%;
+
+    margin: 20px auto;
+}
+
+
+/* =========================
+   Fruit Image
+========================= */
+
+.fruit-image {
+    position: relative;
+
+    overflow: hidden;
+
+    aspect-ratio: 4 / 3;
+}
+
+.fruit-card-center .fruit-image {
+    aspect-ratio: 16 / 8;
+}
+
+.fruit-image::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.18),
+            transparent 45%,
+            rgba(255,255,255,.08)
+        );
+
+    pointer-events: none;
+}
+
+.fruit-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 1.4s
+        cubic-bezier(.2,.7,.2,1);
+}
+.fruit-image video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition:
+        transform 1.4s
+        cubic-bezier(.2,.7,.2,1);
+}
+/* =========================
+   MP4 Video
+========================= */
+
+.fruit-card-center > video {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.fruit-card:hover .fruit-image img {
+    transform: scale(1.08);
+}
+.fruit-card:hover .fruit-image img,
+.fruit-card:hover .fruit-image video {
+    transform: scale(1.08);
+}
+
+/* =========================
+   Shine
+========================= */
+
+.fruit-image::before {
+    content: "";
+
+    position: absolute;
+
+    top: -100%;
+    left: -40%;
+
+    width: 35%;
+    height: 300%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.55),
+            transparent
+        );
+
+    transform: rotate(20deg);
+
+    z-index: 2;
+
+    transition:
+        left 1s ease;
+}
+
+.fruit-card:hover .fruit-image::before {
+    left: 120%;
+}
+
+
+/* =========================
+   Fruit Content
+========================= */
+
+.fruit-content {
+    position: relative;
+
+    padding: 32px 35px 38px;
+}
+
+.fruit-number {
+    position: absolute;
+
+    top: 30px;
+    right: 30px;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 20px;
+
+    color: #bfa36f;
+
+    opacity: .75;
+}
+
+.fruit-category {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: .25em;
+
+    color: #b18c59;
+
+    margin-bottom: 5px;
+}
+
+.fruit-content h3 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 42px;
+
+    font-weight: 400;
+
+    color: #5e748d;
+
+    letter-spacing: .05em;
+
+    margin-bottom: 15px;
+}
+
+.fruit-line {
+    display: block;
+
+    width: 50px;
+    height: 1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c9a15e,
+            transparent
+        );
+
+    margin-bottom: 18px;
+}
+
+.fruit-content > p:last-child {
+    color: #71808e;
+
+    line-height: 2;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   Philosophy
+========================= */
+
+.farm-philosophy {
+    padding:
+        170px
+        0;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(221, 249, 255, .7),
+            rgba(250, 230, 247, .55)
+        );
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.8);
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.8);
+}
+
+.farm-philosophy h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 7vw, 86px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: #657d95;
+
+    margin-bottom: 35px;
+}
+
+.farm-philosophy p:last-child {
+    color: #778896;
+
+    letter-spacing: .08em;
+}
+
+
+/* =========================
+   CTA
+========================= */
+
+.farm-cta {
+    padding:
+        160px
+        0;
+
+    text-align: center;
+}
+
+.farm-cta h2 {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size:
+        clamp(48px, 6vw, 80px);
+
+    line-height: 1.15;
+
+    font-weight: 400;
+
+    color: #5e738c;
+
+    margin-bottom: 45px;
+}
+
+
+/* =========================
+   Button
+========================= */
+
+.btn {
+    display: inline-block;
+
+    padding:
+        15px
+        45px;
+
+    border:
+        1px solid
+        #c4a56e;
+
+    color: #94733f;
+
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 14px;
+
+    letter-spacing: .2em;
+
+    background:
+        rgba(255,255,255,.35);
+
+    transition:
+        .5s ease;
+}
+
+.btn:hover {
+    background: #c4a56e;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px
+        rgba(180,145,80,.2);
+}
+
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    padding:
+        80px
+        5%
+        40px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,.65);
+
+    border-top:
+        1px solid
+        rgba(190,210,220,.35);
+}
+
+.footer-logo {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 35px;
+
+    color: #657c93;
+
+    letter-spacing: .08em;
+}
+
+.site-footer > p {
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    letter-spacing: .25em;
+
+    color: #9aabb8;
+}
+
+.footer-nav {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    margin: 35px 0;
+}
+
+.footer-nav a {
+    font-family:
+        "Cormorant Garamond",
+        serif;
+
+    font-size: 13px;
+
+    letter-spacing: .12em;
+
+    color: #738799;
+
+    transition: .3s ease;
+}
+
+.footer-nav a:hover {
+    color: #b18c59;
+}
+
+.site-footer small {
+    color: #a4afb7;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================
+   Scroll Reveal
+========================= */
+
+.reveal {
+    opacity: 0;
+
+    transform:
+        translateY(70px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s
+        cubic-bezier(.2,.7,.2,1);
+}
+
+.reveal.active {
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+
+    .global-nav {
+        gap: 15px;
+    }
+
+    .global-nav a {
+        font-size: 11px;
+    }
+
+    .fruit-grid {
+        gap: 35px 20px;
+    }
+
+    .fruit-card-center {
+        width: 85%;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 20px 5%;
+    }
+
+    .header-inner {
+        align-items: flex-start;
+    }
+
+    .logo-main {
+        font-size: 24px;
+    }
+
+    .global-nav {
+        display: none;
+    }
+
+    .farm-hero {
+        height: 80vh;
+        min-height: 560px;
+    }
+
+    .farm-hero-image {
+        background-position:
+            55% center;
+    }
+
+    .farm-intro {
+        padding:
+            100px 0
+            80px;
+    }
+
+    .fruit-section {
+        padding-bottom: 100px;
+    }
+
+    .fruit-heading {
+        margin-bottom: 50px;
+    }
+
+    .fruit-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .fruit-card-center {
+        grid-column: auto;
+
+        width: 100%;
+
+        margin: 0;
+    }
+
+    .fruit-card-center .fruit-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .fruit-content {
+        padding:
+            28px 25px
+            32px;
+    }
+
+    .fruit-content h3 {
+        font-size: 35px;
+    }
+
+    .farm-philosophy,
+    .farm-cta {
+        padding:
+            110px 0;
+    }
+
+}

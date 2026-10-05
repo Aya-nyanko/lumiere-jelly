@@ -1,0 +1,899 @@
+@charset "UTF-8";
+
+
+/* =====================
+   RESET
+===================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#05111f;
+
+    color:#fff;
+
+    font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+    line-height:2;
+
+    overflow-x:hidden;
+}
+
+
+
+/* =====================
+   PARTICLES
+   ABOUTと完全に同じ
+===================== */
+
+#particles{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+.sparkle{
+
+    position:absolute;
+
+    width:4px;
+    height:4px;
+
+    border-radius:50%;
+
+    background:white;
+
+    animation:
+    sparkle 8s linear infinite;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 20px white;
+}
+
+@keyframes sparkle{
+
+    0%{
+
+        transform:
+        translateY(100vh);
+
+        opacity:0;
+    }
+
+    10%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        transform:
+        translateY(-100px);
+
+        opacity:0;
+    }
+
+}
+
+
+
+/* =====================
+   HEADER
+===================== */
+
+header{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+
+    padding:25px 8%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:
+    rgba(3,10,20,.75);
+
+    backdrop-filter:blur(15px);
+
+    z-index:999;
+}
+
+.logo a{
+
+    text-decoration:none;
+
+    color:#d4af37;
+
+    font-size:1.3rem;
+
+    letter-spacing:3px;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    margin-left:30px;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+nav a:hover{
+
+    color:#d4af37;
+}
+
+
+
+/* =====================
+   HERO
+===================== */
+
+.news-hero{
+
+    height:70vh;
+
+    background:
+
+    linear-gradient(
+        rgba(0,0,0,.45),
+        rgba(0,0,0,.45)
+    ),
+
+    url("../img/news.jpg");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-attachment:fixed;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    position:relative;
+
+    z-index:1;
+}
+
+.news-hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle,
+        rgba(255,255,255,.08),
+        transparent 60%
+    );
+
+    pointer-events:none;
+}
+
+.hero-content{
+
+    text-align:center;
+
+    position:relative;
+
+    z-index:2;
+}
+
+.subtitle{
+
+    color:#d4af37;
+
+    letter-spacing:6px;
+
+    margin-bottom:20px;
+}
+
+.news-hero h1{
+
+    font-size:4rem;
+
+    font-weight:300;
+
+    letter-spacing:3px;
+
+    text-shadow:
+    0 0 20px rgba(255,255,255,.2);
+}
+
+.hero-text{
+
+    max-width:700px;
+
+    margin:25px auto 0;
+
+    color:#ddd;
+
+    font-size:1.1rem;
+}
+
+
+
+/* =====================
+   COMMON
+===================== */
+
+.section{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+    padding:120px 0;
+
+    position:relative;
+
+    z-index:1;
+}
+
+h2{
+
+    font-size:3rem;
+
+    font-weight:300;
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+    letter-spacing:3px;
+}
+
+.section-label{
+
+    color:#d4af37;
+
+    letter-spacing:5px;
+
+    margin-bottom:15px;
+}
+
+
+
+/* =====================
+   GOLD LINE
+   ABOUTと同じ
+===================== */
+
+.gold-line{
+
+    width:120px;
+
+    height:2px;
+
+    background:
+
+    linear-gradient(
+        to right,
+        transparent,
+        #d4af37,
+        transparent
+    );
+
+    margin-bottom:40px;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.gold-line::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-200px;
+
+    width:120px;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.9),
+        transparent
+    );
+
+    animation:
+    goldShine 4s infinite;
+}
+
+@keyframes goldShine{
+
+    100%{
+
+        left:300px;
+    }
+
+}
+
+.center{
+
+    margin:
+    20px auto 40px;
+}
+
+
+
+/* =====================
+   INTRO
+===================== */
+
+.news-intro{
+
+    text-align:center;
+}
+
+.news-intro > p:last-child{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#ddd;
+
+    font-size:1.1rem;
+}
+
+
+
+/* =====================
+   FILTER
+===================== */
+
+.news-filter{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+    margin-bottom:70px;
+}
+
+.filter-btn{
+
+    padding:10px 25px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    color:white;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-family:
+    "Yu Mincho",
+    "Hiragino Mincho ProN",
+    serif;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.filter-btn:hover{
+
+    color:#d4af37;
+
+    border-color:#d4af37;
+}
+
+.filter-btn.active{
+
+    background:#d4af37;
+
+    color:#05111f;
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 0 20px rgba(212,175,55,.25);
+}
+
+
+
+/* =====================
+   NEWS GRID
+===================== */
+
+.news-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:30px;
+}
+
+
+
+/* =====================
+   NEWS CARD
+===================== */
+
+.news-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+
+    box-shadow:
+    0 20px 40px rgba(0,0,0,.35);
+
+    transition:.5s;
+
+    opacity:0;
+
+    transform:
+    translateY(50px);
+}
+
+.news-card.is-visible{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+.news-card:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.5),
+    0 0 25px rgba(212,175,55,.12);
+}
+
+
+
+/* =====================
+   NEWS IMAGE
+===================== */
+
+.news-image{
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.news-image img{
+
+    width:100%;
+
+    height:260px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.8s;
+}
+
+.news-card:hover
+.news-image img{
+
+    transform:
+    scale(1.05);
+}
+
+
+
+/* =====================
+   IMAGE GLASS EFFECT
+===================== */
+
+.news-image::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:50%;
+
+    height:100%;
+
+    background:
+
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:
+    skewX(-25deg);
+
+    animation:
+    glassMove 6s infinite;
+
+    z-index:10;
+}
+
+@keyframes glassMove{
+
+    100%{
+
+        left:180%;
+    }
+
+}
+
+
+
+/* =====================
+   NEWS INFO
+===================== */
+
+.news-info{
+
+    padding:35px;
+}
+
+.news-category{
+
+    color:#d4af37;
+
+    font-size:.9rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+}
+
+.news-info h3{
+
+    color:white;
+
+    font-size:1.8rem;
+
+    font-weight:300;
+
+    letter-spacing:1px;
+
+    margin-bottom:15px;
+}
+
+.news-info p{
+
+    color:#ddd;
+
+    font-size:1rem;
+
+    line-height:2;
+
+    margin-bottom:20px;
+}
+
+.news-date{
+
+    display:block;
+
+    color:#aaa;
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+}
+
+
+
+/* =====================
+   INSTAGRAM
+===================== */
+
+.news-instagram{
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.02);
+}
+
+.news-instagram > p:not(.section-label){
+
+    max-width:700px;
+
+    margin:
+    0 auto 30px;
+
+    color:#ddd;
+}
+
+
+
+/* =====================
+   CTA
+===================== */
+
+.news-cta{
+
+    text-align:center;
+}
+
+.news-cta p{
+
+    max-width:700px;
+
+    margin:
+    0 auto 35px;
+
+    color:#ddd;
+}
+
+.btn{
+
+    display:inline-block;
+
+    padding:14px 40px;
+
+    margin:10px;
+
+    border:
+    1px solid #d4af37;
+
+    color:white;
+
+    text-decoration:none;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    background:#d4af37;
+
+    color:#05111f;
+}
+
+
+
+/* =====================
+   FOOTER
+===================== */
+
+footer{
+
+    text-align:center;
+
+    padding:60px 40px;
+
+    border-top:
+    1px solid rgba(255,255,255,.1);
+
+    background:#030a14;
+
+    color:#aaa;
+
+    position:relative;
+
+    z-index:1;
+}
+
+footer h3{
+
+    color:#d4af37;
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+.footer-nav{
+
+    margin:30px 0;
+}
+
+.footer-nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    margin:0 15px;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.footer-nav a:hover{
+
+    color:#d4af37;
+}
+
+
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media(max-width:900px){
+
+    .news-grid{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .news-hero h1{
+
+        font-size:2.8rem;
+    }
+
+    nav{
+
+        display:none;
+    }
+
+    h2{
+
+        font-size:2rem;
+    }
+}
+
+
+@media(max-width:600px){
+
+    .section{
+
+        width:88%;
+
+        padding:80px 0;
+    }
+
+    .news-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .news-hero{
+
+        height:60vh;
+
+        background-attachment:scroll;
+    }
+
+    .news-hero h1{
+
+        font-size:2.4rem;
+    }
+
+    .subtitle{
+
+        font-size:.85rem;
+
+        letter-spacing:4px;
+    }
+
+    .news-info{
+
+        padding:25px;
+    }
+
+    .news-image img{
+
+        height:220px;
+    }
+
+    .news-filter{
+
+        gap:8px;
+    }
+
+    .filter-btn{
+
+        padding:
+        8px 16px;
+
+        font-size:.85rem;
+    }
+
+    .footer-nav{
+
+        display:flex;
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:10px;
+    }
+
+    .footer-nav a{
+
+        margin:0;
+    }
+
+    .footer-nav a{
+
+        margin:0;
+    }
+
+}

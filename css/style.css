@@ -1,0 +1,1131 @@
+@charset "UTF-8";
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:
+    'Cormorant Garamond',
+    serif;
+
+    background:#081321;
+
+    color:#ffffff;
+
+    overflow-x:hidden;
+
+    line-height:1.8;
+}
+
+/* =========================
+   共通
+========================= */
+
+.container{
+
+    width:90%;
+    max-width:1200px;
+
+    margin:20px auto 10px;
+}
+
+section{
+
+    padding:120px 0;
+}
+
+h2{
+
+    font-size:3rem;
+
+    text-align:center;
+
+    color:#d4af37;
+
+    margin-bottom:50px;
+
+    letter-spacing:3px;
+}
+
+p{
+
+    font-size:1.1rem;
+}
+
+.btn{
+
+    display:inline-block;
+
+    margin-top:40px;
+
+    padding:
+    15px 40px;
+
+    border:
+    1px solid #d4af37;
+
+    color:white;
+
+    text-decoration:none;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.btn:hover{
+
+    background:#d4af37;
+
+    color:#081321;
+}
+
+/* =========================
+   Loading
+========================= */
+
+#loading{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100vh;
+
+    background:#081321;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.loading-content{
+
+    text-align:center;
+}
+
+.loading-content img{
+
+    width:120px;
+
+    margin-bottom:20px;
+}
+
+.loading-content h1{
+
+    font-size:2rem;
+
+    letter-spacing:4px;
+}
+
+.loading-content p{
+
+    color:#d4af37;
+}
+
+/* =========================
+   Header
+========================= */
+
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8, 19, 33, .65);
+    backdrop-filter: blur(15px);
+    height: 9.8vh;
+    display: flex;
+    align-items: center;
+}
+header .container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:5px 0;
+}
+
+.logo img{
+
+    width:80px;
+}
+.logo-img{
+
+    width:500px;
+
+    height:auto;
+
+    transition:0.3s ease;
+}
+#logo-img {
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    top: 32px;
+}
+@media (max-width:768px){
+
+    .logo-img{
+        width:240px;
+    }
+
+}
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:30px;
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+}
+
+nav a:hover{
+
+    color:#d4af37;
+}
+
+/* =========================
+   Hero
+========================= */
+
+.hero{
+
+    height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.hero-slider{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+}
+
+.slide{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    opacity:0;
+
+    transition:opacity 2s ease;
+}
+
+.slide.active{
+
+    opacity:1;
+}
+
+.slide img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    background:
+    rgba(0,0,0,.4);
+
+    z-index:1;
+}
+
+.hero-content{
+
+    position:absolute;
+
+    top:58%;
+    left:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    z-index:10;
+
+    text-align:center;
+
+    width:90%;
+}
+
+.hero-subtitle{
+    color:#d4af37;
+    letter-spacing:5px;
+    margin-bottom:10px;
+    transform:translateY(-30px);
+}
+
+.hero-content h1{
+
+    font-size:5rem;
+
+    font-weight:300;
+
+    line-height:1.2;
+
+    margin-bottom:30px;
+}
+
+.hero-text{
+
+    max-width:700px;
+    margin: 15px auto 0;
+    font-size: 1rem;
+    line-height: 1;
+    text-align: center;
+}
+
+
+.line{
+    display:inline-block;
+    padding:0 .2em;
+}
+#hero-title{
+    font-size:clamp(2.8rem,5.5vw,6rem);
+}
+#hero-title{
+
+    color:#fff;
+
+    -webkit-text-stroke:1px rgba(0,0,0,.4);
+
+    text-shadow:
+        0 2px 4px rgba(0,0,0,.8),
+        0 0 10px rgba(212,175,55,.6),
+        0 0 20px rgba(212,175,55,.3);
+}
+
+.desc-line{
+
+    color:#fff;
+
+    text-shadow:
+        0 1px 3px rgba(0,0,0,.8),
+        0 0 5px rgba(212,175,55,.3);
+}
+
+/* =========================
+   Brand Story
+========================= */
+
+.story {
+    text-align: center;
+}
+
+.story p {
+    max-width: 800px;
+    margin: auto;
+}
+
+.brand-story {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 150px auto 70px;
+    padding: 0 5%;
+}
+
+/* 左：写真 */
+
+.story-image {
+    flex: 0 0 420px;
+}
+
+.story-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.3);
+    display: block;
+}
+
+/* 右：文章 */
+
+.story-text {
+    flex: 1;
+}
+
+.story-text h2 {
+    margin-top: 0;
+}
+/* =========================
+   Brand Story Reveal Animation
+========================= */
+
+.story-image {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.story-text {
+    opacity: 0;
+    transform: translateX(80px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+    transition-delay: .15s;
+}
+
+.story.active .story-image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.story.active .story-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================
+   Collection
+========================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:40px;
+}
+
+.card{
+
+    background:
+    rgba(255,255,255,.05);
+
+    border:
+    1px solid rgba(255,255,255,.1);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    transition:.5s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-10px);
+}
+
+.card img{
+
+    width:100%;
+
+    display:block;
+}
+
+
+.card h3{
+
+    padding-top:20px;
+
+    text-align:center; 
+    
+
+    color:#d4af37;
+}
+
+.card p{
+
+    padding:20px;
+}
+
+/* =========================
+   Lesson
+========================= */
+
+.lesson{
+
+    text-align:center;
+}
+/* =========================
+   Lesson
+========================= */
+
+.lesson-story {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    gap: 100px;
+
+    max-width: 1200px;
+
+    margin: 150px auto;
+
+    padding: 0 5%;
+
+}
+
+
+/* =========================
+   Lesson Text
+========================= */
+
+.lesson-text {
+
+    flex: 1;
+
+}
+
+.lesson-text h2 {
+
+    margin-top: 0;
+
+}
+
+.lesson-text p {
+
+    max-width: 800px;
+
+    margin-bottom: 25px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================
+   Lesson Image
+========================= */
+
+.lesson-image {
+
+    flex: 0 0 420px;
+
+}
+
+.lesson-image img {
+
+    width: 100%;
+
+    border-radius: 20px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.3);
+
+    display: block;
+
+}
+/* =========================
+   Lesson Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .lesson-story {
+
+        flex-direction: column;
+
+        gap: 50px;
+
+        margin: 100px auto;
+
+        padding: 0 8%;
+
+    }
+
+    .lesson-text {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+    .lesson-text h2 {
+
+        text-align: center;
+
+    }
+
+    .lesson-image {
+
+        flex: none;
+
+        width: 100%;
+
+    }
+
+    .lesson-image img {
+
+        width: 100%;
+
+    }
+
+}
+/* =========================
+   Lesson Reveal Animation
+========================= */
+
+.lesson-text {
+    opacity: 0;
+    transform: translateX(-80px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.lesson-image {
+    opacity: 0;
+    transform: translateX(80px);
+
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+
+/* 表示されたとき */
+
+.lesson.active .lesson-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.lesson.active .lesson-image {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* =========================
+   Farm
+========================= */
+
+.farm{
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+    rgba(255,255,255,.02),
+    rgba(255,255,255,.04)
+    );
+}
+/* =========================
+   Farm Story
+========================= */
+
+.farm-story {
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:100px;
+    max-width:1200px;
+    margin:150px auto;
+    padding:0 5%;
+}
+
+/* 左：写真 */
+
+.farm-image {
+    flex:0 0 420px;
+}
+
+.farm-image img {
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);
+    display:block;
+}
+
+/* 右：文字 */
+
+.farm-text {
+    flex:1;
+}
+
+.farm-text h2 {
+    margin-top:0;
+}
+
+.farm-text p {
+    margin-bottom:25px;
+    line-height:1.8;
+}
+/* =========================
+   Farm Reveal Animation
+========================= */
+
+.farm-image {
+    opacity:0;
+    transform:translateX(-80px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+.farm-text {
+    opacity:0;
+    transform:translateX(80px);
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+    transition-delay:.15s;
+}
+
+.farm.active .farm-image {
+    opacity:1;
+    transform:translateX(0);
+}
+
+.farm.active .farm-text {
+    opacity:1;
+    transform:translateX(0);
+}
+
+/* =========================
+   Instagram
+========================= */
+
+.instagram{
+
+    text-align:center;
+}
+
+/* =========================
+   Contact
+========================= */
+
+.contact{
+
+    text-align:center;
+}
+
+/* =========================
+   Footer
+========================= */
+
+footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    border-top:
+    1px solid rgba(255,255,255,.1);
+
+    background:#06101b;
+
+}
+
+.footer-logo{
+
+    width:100px;
+
+    margin-bottom:20px;
+
+}
+
+footer h3{
+
+    color:#d4af37;
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+
+}
+
+.footer-nav{
+
+    margin:35px 0;
+
+}
+
+.footer-nav a{
+
+    color:#fff;
+
+    text-decoration:none;
+
+    margin:0 18px;
+
+    letter-spacing:2px;
+
+    transition:.3s;
+
+}
+
+.footer-nav a:hover{
+
+    color:#d4af37;
+
+}
+
+.copyright{
+
+    color:#999;
+
+    font-size:.9rem;
+
+}
+
+/* =========================
+   Reveal Animation
+========================= */
+
+.reveal{
+
+    opacity:0;
+
+    transform:
+    translateY(80px);
+
+    transition:1.5s;
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:
+    translateY(0);
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media(max-width:768px){
+
+    nav ul{
+
+        gap:15px;
+
+        font-size:.8rem;
+    }
+
+    .hero-content h1{
+
+        font-size:2.5rem;
+    }
+
+    h2{
+
+        font-size:2rem;
+    }
+
+    .logo img{
+
+        width:60px;
+    }
+
+    section{
+
+        padding:80px 0;
+    }
+}
+/* =========================
+   Crystal Particles
+========================= */
+
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.sparkle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: white;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px #d4af37;
+
+    animation: sparkleMove 12s linear infinite;
+}
+
+@keyframes sparkleMove {
+
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+}
+
+
+/* =========================
+   Hero Image
+========================= */
+
+.hero::before {
+    background: rgba(0, 0, 0, .15);
+}
+
+.slide img {
+    filter:
+        brightness(1.2)
+        saturate(1.0);
+}
+
+
+/* =========================
+   Hero Title Animation
+========================= */
+
+#hero-title,
+#hero-text {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: charFade .8s forwards;
+}
+
+@keyframes charFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================
+   Gold Line
+========================= */
+
+.gold-line {
+    width: 0;
+    height: 2px;
+    margin: 25px auto 0;
+
+    background: #d4af37;
+
+    box-shadow:
+        0 0 10px #d4af37,
+        0 0 20px #d4af37;
+}
+
+.gold-line.active {
+    animation: lineGrow 2s forwards;
+}
+
+@keyframes lineGrow {
+
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 450px;
+    }
+
+}
+
+
+/* =========================
+   Hero Description Animation
+========================= */
+
+.hero-text {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    line-height: 2;
+}
+
+.desc-char {
+    display: inline-block;
+    opacity: 0;
+    transform: translateX(-20px);
+
+    animation: descFade .8s forwards;
+}
+
+@keyframes descFade {
+
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================
+   Photo Crystal Shine
+========================= */
+
+/* 写真を包む要素 */
+.story-image,
+.lesson-image,
+.farm-image,
+.card {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* 写真 */
+.story-image img,
+.lesson-image img,
+.farm-image img,
+.card img {
+    display: block;
+    width: 100%;
+}
+
+
+/* 光の帯 */
+.story-image::after,
+.lesson-image::after,
+.farm-image::after,
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 45%;
+    height: 100%;
+
+    background: linear-gradient(
+        100deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.05) 30%,
+        rgba(255, 255, 255, 0.65) 50%,
+        rgba(212, 175, 55, 0.20) 65%,
+        transparent 100%
+    );
+
+    transform: skewX(-20deg);
+
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+
+/* マウスを乗せたとき */
+.story-image:hover::after,
+.lesson-image:hover::after,
+.farm-image:hover::after,
+.card:hover::after {
+
+    opacity: 1;
+
+    animation: photoShine 0.8s ease;
+}
+
+
+/* =========================
+   Photo Shine Animation
+========================= */
+
+@keyframes photoShine {
+
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 130%;
+    }
+
+}

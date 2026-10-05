@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/faviconG.ico" type="image/x-icon">
+    <title>
+        Contact | Lumière Jelly Crystal Cake Studio
+    </title>
+
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+
+    <!-- キラキラ粒子 -->
+    <div id="particles"></div>
+
+    <!-- マウスに追従する光 -->
+    <div class="cursor-light"></div>
+
+
+    <!-- ヘッダー -->
+    <header>
+
+        <div class="logo">
+            <a href="index.html">
+                Lumière Jelly
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="lesson.html">LESSON</a>
+            <a href="about.html">ABOUT</a>
+            <a href="farm.html">FARM</a>
+            <a href="news.html">NEWS</a>
+            <a href="contact.html" class="active">CONTACT</a>
+        </nav>
+
+    </header>
+
+
+    <!-- ヒーロー -->
+    <section class="contact-hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="subtitle">
+                Contact
+            </p>
+
+            <h1>
+                Lumière Jelly
+            </h1>
+
+            <p class="hero-text">
+                お問い合わせ
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT INTRO -->
+    <section class="contact-intro section reveal">
+
+        <p class="small-title">
+            CONTACT US
+        </p>
+
+        <h2>
+            Lumière Jellyへの<br>
+            お問い合わせ
+        </h2>
+
+        <div class="gold-line center"></div>
+
+        <p class="intro-text">
+            商品についてのご質問、ギフトのご相談、
+            レッスンに関するお問い合わせなど、
+            どうぞお気軽にお問い合わせください。
+        </p>
+
+    </section>
+
+
+    <!-- CONTACT FORM -->
+    <section class="contact-section section">
+
+        <div class="form-wrapper reveal">
+
+            <form id="contactForm">
+
+                <!-- お名前 -->
+                <div class="form-group">
+
+                    <label for="name">
+                        NAME
+                        <span>お名前</span>
+                    </label>
+
+                    <input type="text" id="name" name="name" placeholder="お名前をご入力ください" required>
+
+                </div>
+
+
+                <!-- メール -->
+                <div class="form-group">
+
+                    <label for="email">
+                        EMAIL
+                        <span>メールアドレス</span>
+                    </label>
+
+                    <input type="email" id="email" name="email" placeholder="example@email.com" required>
+
+                </div>
+
+
+                <!-- お問い合わせ内容 -->
+                <div class="form-group">
+
+                    <label>
+                        INQUIRY TYPE
+                        <span>お問い合わせ内容</span>
+                    </label>
+
+
+                    <div class="inquiry-options">
+
+                        <label class="inquiry-card">
+
+                            <input type="radio" name="type" value="商品について" required>
+
+                            <span class="card-content">
+                                <span class="card-icon">✦</span>
+                                <span class="card-title">
+                                    PRODUCT
+                                </span>
+                                <span class="card-text">
+                                    商品について
+                                </span>
+                            </span>
+
+                        </label>
+
+
+                        <label class="inquiry-card">
+
+                            <input type="radio" name="type" value="ギフトについて">
+
+                            <span class="card-content">
+                                <span class="card-icon">✦</span>
+                                <span class="card-title">
+                                    GIFT
+                                </span>
+                                <span class="card-text">
+                                    ギフトについて
+                                </span>
+                            </span>
+
+                        </label>
+
+
+                        <label class="inquiry-card">
+
+                            <input type="radio" name="type" value="レッスンについて">
+
+                            <span class="card-content">
+                                <span class="card-icon">✦</span>
+                                <span class="card-title">
+                                    LESSON
+                                </span>
+                                <span class="card-text">
+                                    レッスンについて
+                                </span>
+                            </span>
+
+                        </label>
+
+
+                        <label class="inquiry-card">
+
+                            <input type="radio" name="type" value="その他">
+
+                            <span class="card-content">
+                                <span class="card-icon">✦</span>
+                                <span class="card-title">
+                                    OTHER
+                                </span>
+                                <span class="card-text">
+                                    その他
+                                </span>
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- メッセージ -->
+                <div class="form-group">
+
+                    <label for="message">
+                        MESSAGE
+                        <span>お問い合わせ内容</span>
+                    </label>
+
+                    <textarea id="message" name="message" rows="7" placeholder="お問い合わせ内容をご入力ください" required></textarea>
+
+                </div>
+
+
+                <!-- 送信ボタン -->
+                <div class="submit-area">
+
+                    <button type="submit" class="submit-button">
+
+                        <span class="button-shine"></span>
+
+                        <span class="button-text">
+                            SEND
+                        </span>
+
+                        <span class="button-subtext">
+                            お問い合わせを送信
+                        </span>
+
+                    </button>
+
+                    <p class="privacy-text">
+                        お預かりした個人情報は、
+                        お問い合わせへの対応以外には使用いたしません。
+                    </p>
+
+                </div>
+
+            </form>
+
+
+            <!-- 送信完了 -->
+            <div class="thank-you" id="thankYou">
+
+                <div class="thankyou-crystal">
+                    ✦
+                </div>
+
+                <p class="thankyou-small">
+                    MESSAGE RECEIVED
+                </p>
+
+                <h2>
+                    Thank you
+                </h2>
+
+                <div class="gold-line center"></div>
+
+                <p>
+                    お問い合わせありがとうございます。<br>
+                    メッセージを受け付けました。
+                </p>
+
+                <span class="thankyou-note">
+                    Lumière Jelly Crystal Cake Studio
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SNS -->
+    <section class="sns-section section reveal">
+
+        <p class="small-title">
+            FOLLOW US
+        </p>
+
+        <h2>
+            Lumière Jellyの世界を<br>
+            SNSでもお楽しみください
+        </h2>
+
+        <div class="gold-line center"></div>
+
+        <div class="sns-links">
+
+            <a href="#" class="sns-link">
+                <span>Instagram</span>
+                <small>FOLLOW</small>
+            </a>
+
+            <a href="#" class="sns-link">
+                <span>Facebook</span>
+                <small>FOLLOW</small>
+            </a>
+
+            <a href="#" class="sns-link">
+                <span>X</span>
+                <small>FOLLOW</small>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+     FOOTER
+========================= -->
+
+    <footer>
+
+        <h3>
+            Lumière Jelly
+        </h3>
+
+        <p>
+            宝石のような輝きを、スイーツという芸術に。
+        </p>
+
+
+        <div class="footer-nav">
+
+            <a href="index.html">HOME</a>
+            <a href="menu.html">MENU</a>
+            <a href="lesson.html">LESSON</a>
+            <a href="about.html">ABOUT</a>
+            <a href="farm.html">FARM</a>
+            <a href="news.html">NEWS</a>
+            <a href="contact.html">CONTACT</a>
+
+        </div>
+
+
+        <p>
+            © Lumière Jelly Crystal Cake Studio
+        </p>
+
+    </footer>
+
+    <script src="js/contact.js"></script>
+
+</body>
+
+</html>

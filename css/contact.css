@@ -1,0 +1,1099 @@
+@charset "UTF-8";
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #05111f;
+    color: #fff;
+
+    font-family:
+        "Yu Mincho",
+        "Hiragino Mincho ProN",
+        serif;
+
+    line-height: 2;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 25px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(3, 10, 20, .75);
+
+    backdrop-filter: blur(15px);
+
+    z-index: 999;
+}
+
+.logo a {
+    text-decoration: none;
+
+    color: #d4af37;
+
+    font-size: 1.3rem;
+
+    letter-spacing: 3px;
+}
+
+nav a {
+    position: relative;
+
+    text-decoration: none;
+
+    color: white;
+
+    margin-left: 30px;
+
+    letter-spacing: 2px;
+
+    transition: .4s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #d4af37;
+}
+
+nav a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -8px;
+
+    width: 100%;
+    height: 1px;
+
+    background: #d4af37;
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+#particles {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.sparkle {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    animation:
+        sparkle 8s linear infinite;
+
+    box-shadow:
+        0 0 10px white,
+        0 0 20px white;
+}
+
+@keyframes sparkle {
+
+    0% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CURSOR LIGHT
+========================= */
+
+.cursor-light {
+    position: fixed;
+
+    width: 250px;
+    height: 250px;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(150, 220, 255, .12),
+            transparent 70%
+        );
+
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.contact-hero {
+    height: 70vh;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(3, 10, 20, .58),
+            rgba(3, 10, 20, .72)
+        ),
+        url("../img/contact-hero.webp");
+
+    background-size: cover;
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent,
+            rgba(0, 0, 0, .35)
+        );
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 5;
+
+    text-align: center;
+    
+    transform: translateY(45px);
+}
+
+.subtitle {
+    color: #d4af37;
+
+    letter-spacing: 7px;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+
+    font-weight: 300;
+
+    letter-spacing: 4px;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,.25);
+}
+
+.hero-text {
+    margin-top: 15px;
+
+    letter-spacing: 5px;
+
+    color: #ddd;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+.section {
+    position: relative;
+    z-index: 2;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 120px 0;
+}
+
+.small-title {
+    color: #d4af37;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.8rem;
+
+    font-weight: 300;
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    line-height: 1.5;
+}
+
+.gold-line {
+    width: 120px;
+    height: 2px;
+
+    margin: 25px 0 40px;
+
+    background:
+        linear-gradient(
+            to right,
+            transparent,
+            #d4af37,
+            transparent
+        );
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.gold-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -200px;
+
+    width: 120px;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.9),
+            transparent
+        );
+
+    animation:
+        goldShine 4s infinite;
+}
+
+@keyframes goldShine {
+
+    100% {
+        left: 300px;
+    }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.contact-intro {
+    text-align: center;
+
+    max-width: 800px;
+}
+
+.contact-intro .gold-line {
+    margin-bottom: 35px;
+}
+
+.intro-text {
+    color: #ddd;
+
+    font-size: 1.05rem;
+}
+
+
+/* =========================
+   FORM AREA
+========================= */
+
+.contact-section {
+    max-width: 1000px;
+}
+
+.form-wrapper {
+    position: relative;
+
+    padding: 70px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,.045);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35);
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    margin-bottom: 50px;
+}
+
+.form-group > label {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+
+    font-size: .95rem;
+}
+
+.form-group > label span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #ddd;
+
+    font-size: .85rem;
+
+    letter-spacing: 1px;
+}
+
+
+/* INPUT */
+
+input[type="text"],
+input[type="email"],
+textarea {
+
+    width: 100%;
+
+    padding: 17px 5px;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom:
+        1px solid rgba(255,255,255,.25);
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 1rem;
+
+    outline: none;
+
+    transition:
+        border-color .4s,
+        box-shadow .4s;
+}
+
+textarea {
+    resize: vertical;
+
+    min-height: 160px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255,255,255,.4);
+}
+
+input:focus,
+textarea:focus {
+
+    border-bottom-color:
+        #d4af37;
+
+    box-shadow:
+        0 8px 20px rgba(212,175,55,.08);
+}
+
+
+/* =========================
+   INQUIRY CARDS
+========================= */
+
+.inquiry-options {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+}
+
+.inquiry-card {
+    cursor: pointer;
+}
+
+.inquiry-card input {
+    display: none;
+}
+
+.card-content {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 150px;
+
+    padding: 20px;
+
+    text-align: center;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.025);
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    transition:
+        .5s;
+}
+
+.card-icon {
+    color: #d4af37;
+
+    font-size: 1.2rem;
+
+    margin-bottom: 8px;
+}
+
+.card-title {
+
+    color: white;
+
+    letter-spacing: 2px;
+
+    font-size: .9rem;
+}
+
+.card-text {
+
+    color: #aaa;
+
+    font-size: .75rem;
+
+    margin-top: 3px;
+}
+
+.inquiry-card:hover .card-content {
+
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(212,175,55,.6);
+
+    box-shadow:
+        0 10px 30px rgba(212,175,55,.08);
+}
+
+.inquiry-card input:checked + .card-content {
+
+    border-color: #d4af37;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.08),
+            rgba(212,175,55,.06)
+        );
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,.12),
+        inset 0 0 20px rgba(255,255,255,.03);
+}
+
+.inquiry-card input:checked + .card-content .card-icon {
+
+    text-shadow:
+        0 0 15px #d4af37;
+}
+
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+
+.submit-area {
+
+    text-align: center;
+
+    padding-top: 15px;
+}
+
+.submit-button {
+
+    position: relative;
+
+    overflow: hidden;
+
+    width: 320px;
+
+    min-height: 80px;
+
+    border: 1px solid rgba(255,255,255,.5);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #182332,
+            #243344
+        );
+
+    color: white;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.35);
+
+    transition:
+        .5s;
+}
+
+.submit-button:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #d4af37;
+
+    box-shadow:
+        0 20px 50px rgba(212,175,55,.18);
+}
+
+.button-text {
+
+    display: block;
+
+    position: relative;
+
+    z-index: 3;
+
+    letter-spacing: 5px;
+
+    font-size: 1.05rem;
+}
+
+.button-subtext {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: block;
+
+    margin-top: 2px;
+
+    font-size: .7rem;
+
+    color: #bbb;
+
+    letter-spacing: 1px;
+}
+
+
+/* 斜めの宝石の光 */
+
+.button-shine {
+
+    position: absolute;
+
+    top: -80%;
+
+    left: -100%;
+
+    width: 45%;
+
+    height: 260%;
+
+    transform:
+        rotate(25deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.15),
+            rgba(255,255,255,.95),
+            rgba(212,175,55,.9),
+            rgba(255,255,255,.25),
+            transparent
+        );
+
+    transition:
+        left .9s ease;
+
+    z-index: 2;
+}
+
+.submit-button:hover .button-shine {
+
+    left: 160%;
+}
+
+
+/* クリック時 */
+
+.submit-button.sending .button-shine {
+
+    animation:
+        buttonShine .8s ease;
+}
+
+@keyframes buttonShine {
+
+    0% {
+        left: -100%;
+    }
+
+    100% {
+        left: 160%;
+    }
+}
+
+.privacy-text {
+
+    margin-top: 25px;
+
+    color: #888;
+
+    font-size: .7rem;
+}
+
+
+/* =========================
+   THANK YOU
+========================= */
+
+.thank-you {
+
+    display: none;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+.thank-you.show {
+
+    display: block;
+
+    animation:
+        thankYouShow 1.2s ease forwards;
+}
+
+@keyframes thankYouShow {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(30px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.thankyou-crystal {
+
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid rgba(212,175,55,.6);
+
+    border-radius: 50%;
+
+    color: #fff;
+
+    font-size: 2rem;
+
+    box-shadow:
+        0 0 30px rgba(212,175,55,.2);
+
+    animation:
+        crystalPulse 2s infinite;
+}
+
+@keyframes crystalPulse {
+
+    50% {
+        box-shadow:
+            0 0 50px rgba(255,255,255,.25);
+    }
+}
+
+.thankyou-small {
+
+    color: #d4af37;
+
+    letter-spacing: 5px;
+
+    font-size: .75rem;
+}
+
+.thank-you h2 {
+
+    margin-top: 15px;
+
+    font-size: 4rem;
+
+    color: white;
+
+    font-family:
+        Georgia,
+        serif;
+
+    font-style: italic;
+}
+
+.thank-you p {
+
+    color: #ddd;
+}
+
+.thankyou-note {
+
+    display: block;
+
+    margin-top: 35px;
+
+    color: #888;
+
+    letter-spacing: 2px;
+
+    font-size: .75rem;
+}
+
+
+/* =========================
+   SNS
+========================= */
+
+.sns-section {
+
+    text-align: center;
+
+    max-width: 900px;
+}
+
+.sns-links {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.sns-link {
+
+    text-decoration: none;
+
+    color: white;
+
+    padding: 30px;
+
+    border:
+        1px solid rgba(255,255,255,.1);
+
+    border-radius: 15px;
+
+    background:
+        rgba(255,255,255,.03);
+
+    transition:
+        .5s;
+}
+
+.sns-link span {
+
+    display: block;
+
+    letter-spacing: 2px;
+}
+
+.sns-link small {
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #d4af37;
+
+    letter-spacing: 3px;
+}
+
+.sns-link:hover {
+
+    transform:
+        translateY(-8px);
+
+    border-color:
+        rgba(212,175,55,.6);
+
+    box-shadow:
+        0 15px 35px rgba(212,175,55,.08);
+}
+
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        1.2s ease;
+}
+
+.reveal.active {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+
+    text-align:center;
+
+    padding:60px 40px;
+
+    border-top:
+    1px solid rgba(255,255,255,.1);
+
+    background:#030a14;
+
+    color:#aaa;
+
+    position:relative;
+
+    z-index:1;
+}
+
+footer h3{
+
+    color:#d4af37;
+
+    font-size:2rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:20px;
+}
+
+.footer-nav{
+
+    margin:30px 0;
+}
+
+.footer-nav a{
+
+    text-decoration:none;
+
+    color:white;
+
+    margin:0 15px;
+
+    letter-spacing:2px;
+
+    transition:.4s;
+}
+
+.footer-nav a:hover{
+
+    color:#d4af37;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .form-wrapper {
+        padding: 40px 25px;
+    }
+
+    .inquiry-options {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .sns-links {
+        grid-template-columns: 1fr;
+    }
+
+    .submit-button {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+
+@media(max-width: 600px) {
+
+    header {
+        padding: 20px 6%;
+    }
+
+    .contact-hero {
+        height: 60vh;
+
+        background-attachment:
+            scroll;
+    }
+
+    .section {
+        width: 88%;
+
+        padding: 80px 0;
+    }
+
+    .form-wrapper {
+        padding: 30px 20px;
+    }
+
+    .inquiry-options {
+        grid-template-columns: 1fr;
+    }
+
+    .card-content {
+        min-height: 110px;
+    }
+
+    .thank-you h2 {
+        font-size: 3rem;
+    }
+
+    .cursor-light {
+        display: none;
+    }
+}
