@@ -1129,3 +1129,10 @@ footer h3{
     }
 
 }
+/* INDEX header: align with NEWS page */
+header.home-header { height:auto; min-height:82px; padding:25px 8%; display:flex; justify-content:space-between; align-items:center; background:rgba(3,10,20,.75); }
+header.home-header .logo a { color:#d4af37; font-size:1.3rem; letter-spacing:3px; text-decoration:none; white-space:nowrap; }
+header.home-header > nav { display:flex; align-items:center; flex-wrap:nowrap; }
+header.home-header > nav a { margin-left:30px; letter-spacing:2px; font-size:1rem; white-space:nowrap; }
+@media (max-width:1100px) and (min-width:768px) { header.home-header { padding-left:4%; padding-right:4%; } header.home-header > nav a { margin-left:clamp(7px,1.5vw,20px); font-size:.85rem; } }
+@media (max-width:767px) { header.home-header { min-height:76px; padding:14px 20px; } header.home-header .logo a { font-size:1.15rem; letter-spacing:2px; } header.home-header > nav { display:flex; align-items:stretch; } }
