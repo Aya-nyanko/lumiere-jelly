@@ -1129,22 +1129,28 @@ footer h3{
     }
 
 }
-/* HOME header typography matches NEWS / CONTACT. */
+/* HOME header: same geometry and typography as CONTACT. */
 header.home-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: auto;
-    min-height: 82px;
+    min-height: 0;
     padding: 25px 8%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: rgba(3, 10, 20, .75);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
     font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: 16px;
     line-height: 2;
 }
 header.home-header .logo a {
     text-decoration: none;
     color: #d4af37;
-    font-family: inherit;
     font-size: 1.3rem;
     font-weight: 400;
     font-style: normal;
@@ -1153,21 +1159,34 @@ header.home-header .logo a {
     white-space: nowrap;
 }
 header.home-header > nav {
-    display: flex;
-    align-items: center;
-    flex-wrap: nowrap;
+    display: block;
+    font: inherit;
 }
 header.home-header > nav a {
+    position: relative;
+    text-decoration: none;
+    color: white;
     margin-left: 30px;
     letter-spacing: 2px;
-    font-size: 1rem;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
     white-space: nowrap;
+    transition: .4s;
 }
-@media (max-width: 1100px) and (min-width: 768px) {
-    header.home-header { padding-left: 4%; padding-right: 4%; }
-    header.home-header > nav a { margin-left: clamp(7px, 1.5vw, 20px); font-size: .85rem; }
+header.home-header > nav a:hover,
+header.home-header > nav a[aria-current="page"] { color: #d4af37; }
+header.home-header > nav a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 1px;
+    background: #d4af37;
 }
 @media (max-width: 767px) {
-    header.home-header { min-height: 76px; padding: 14px 20px; }
-    header.home-header > nav { display: flex; align-items: stretch; }
+    header.home-header { padding: 20px 6%; }
+    header.home-header > nav { display: flex; }
+    header.home-header > nav a { margin-left: 0; }
 }
