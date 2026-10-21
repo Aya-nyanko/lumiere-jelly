@@ -1,0 +1,49 @@
+/* Shared responsive enhancements for Lumière Jelly */
+:root { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+html { max-width: 100%; }
+body { min-width: 0; }
+img, video, svg, iframe { max-width: 100%; }
+img { height: auto; }
+main, section, article, .container { min-width: 0; }
+@media (max-width: 1024px) {
+  header:not(.site-header) { padding-left: 4%; padding-right: 4%; }
+  header:not(.site-header) nav a { margin-left: clamp(6px, 1.5vw, 16px); letter-spacing: .07em; }
+}
+@media (max-width: 767px) {
+  body { overflow-x: clip; }
+  section { padding-top: 65px; padding-bottom: 65px; }
+  h1, h2, h3, p { overflow-wrap: anywhere; }
+  h2 { font-size: clamp(1.65rem, 6vw, 2.4rem); letter-spacing: .07em; }
+  .container { width: min(100% - 32px, 1200px); }
+  header:not(.site-header), header.site-header { z-index: 2000; }
+  header:not(.site-header) > .container, header.site-header .header-inner { width: 100%; min-width: 0; margin: 0; }
+  header:not(.site-header) nav, header.site-header .global-nav {
+    position: fixed !important; top: 0 !important; right: 0 !important; bottom: 0 !important; left: auto !important;
+    width: min(86vw, 340px) !important; height: 100dvh !important; min-height: 100vh;
+    padding: 92px 24px 30px !important; margin: 0 !important;
+    display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important;
+    background: rgba(5,17,31,.98) !important; box-shadow: -12px 0 35px rgba(0,0,0,.25);
+    overflow-y: auto; overscroll-behavior: contain;
+    transform: translateX(105%); visibility: hidden; pointer-events: none;
+    transition: transform .25s ease, visibility .25s ease;
+    z-index: 2001;
+  }
+  body.mobile-nav-open header nav, body.mobile-nav-open header.site-header .global-nav {
+    transform: translateX(0); visibility: visible; pointer-events: auto;
+  }
+  header nav ul { display: flex !important; flex-direction: column !important; align-items: stretch !important; gap: 0 !important; padding: 0 !important; margin: 0 !important; }
+  header nav li { list-style: none; width: 100%; }
+  header nav a, header.site-header .global-nav a { display: block !important; width: 100%; padding: 12px 4px !important; margin: 0 !important; font-size: 1rem !important; line-height: 1.6; }
+  .mobile-menu-toggle { position: absolute; top: 50%; right: 18px; transform: translateY(-50%); z-index: 2003; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; width: 44px; height: 44px; border: 1px solid rgba(212,175,55,.55); border-radius: 6px; background: rgba(5,17,31,.85); cursor: pointer; }
+  .mobile-menu-toggle span { display:block; width: 22px; height: 2px; background:#d4af37; transition: transform .2s, opacity .2s; }
+  body.mobile-nav-open .mobile-menu-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  body.mobile-nav-open .mobile-menu-toggle span:nth-child(2) { opacity: 0; }
+  body.mobile-nav-open .mobile-menu-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .mobile-nav-backdrop { position: fixed; inset: 0; z-index: 1999; background: rgba(0,0,0,.55); }
+  body.mobile-nav-open { overflow: hidden; }
+  .btn { max-width: 100%; padding: 12px 22px; white-space: normal; text-align: center; }
+  input, textarea, select { max-width: 100%; }
+}
+@media (min-width: 768px) { .mobile-menu-toggle, .mobile-nav-backdrop { display: none !important; } }
+@media (max-width: 420px) { section { padding-top: 48px; padding-bottom: 48px; } .container { width: calc(100% - 28px); } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .mobile-menu-toggle span, header nav, header.site-header .global-nav { transition: none !important; } }
